@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  eds-api:
+#    platform: linux/amd64
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    image: eds-api
+    restart: always
+    ports:
+      - "3205:8080"
+    command:
+      java -Xmx1024m -Dlog4j2.formatMsgNoLookups=true -Djava.security.egd=file:/dev/./urandom -jar app.jar --spring.profiles.active=prd
+
+networks:
+  default:
+    name: app-network
+    external: true

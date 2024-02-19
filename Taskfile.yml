@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  build-images:
+    cmds:
+      - docker compose -f docker-compose.build.yml build
+
+  deploy:
+    cmds:
+      - docker compose -f docker-compose.yml up -d --force-recreate
+
+  start:
+    cmds:
+      - docker compose -f docker-compose.yml up -d --force-recreate
+
+  restart:
+    cmds:
+      - docker compose -f docker-compose.yml up -d --force-recreate
+
+  stop:
+    cmds:
+      - docker compose -f docker-compose.yml down --remove-orphans
+
+  push-images:
+    cmds:
+      - docker compose -f docker-compose.build.yml push

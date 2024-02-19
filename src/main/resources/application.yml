@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: eds-api
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSS
+    time-zone: Asia/Bangkok
+  servlet:
+    multipart:
+      max-request-size: 200MB
+      max-file-size: 200MB
+      enabled: true
+  liquibase:
+    enabled: false
+  threads:
+    virtual:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prd

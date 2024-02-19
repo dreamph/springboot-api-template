@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  eds-api:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eds-api
+
+networks:
+  default:
+    name: app-network
+    external: true
