@@ -1,4 +1,4 @@
-package th.co.iamconsulting.eds;
+package com.github.dreamph;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
